@@ -7,10 +7,10 @@ instala todas as dependências necessárias para o projeto.
 ### `yarn start`
 
 Executa o projeto:
-[https://affectionate-yonath-d95087.netlify.app](https://affectionate-yonath-d95087.netlify.app).
+[http://localhost:3000](http://localhost:3000).
 
 ### O projeto está hospedado pelo netlify em:
-[http://localhost:3000](http://localhost:3000)
+[https://affectionate-yonath-d95087.netlify.app](https://affectionate-yonath-d95087.netlify.app)
 
 ### Possíveis melhorias para o projeto
 
