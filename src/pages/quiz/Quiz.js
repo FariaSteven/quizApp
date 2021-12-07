@@ -12,8 +12,9 @@ const Quiz = () => {
   const [question, setQuestion] = useState(0);
   const [answers, setAnswers] = useState([]);
   const [showResults, setShowResults] = useState(false);
-  const [corrects, setCorrects] = useState(0)
+  const [corrects, setCorrects] = useState(0)  
   const [loading, setLoading] = useState(false)
+  const [buttonClicked, setButtonClicked] = useState(false)
 
   const useStyles = makeStyles(quizStylesConfig())
   const classes = useStyles()
@@ -29,6 +30,7 @@ const Quiz = () => {
       })
       
       .then((res) => {
+        console.log(res.data)
         setLoading(true)
         setData(res.data);
       });
@@ -37,11 +39,15 @@ const Quiz = () => {
   };
 
   const nextQuestion = () => {
-    setQuestion(question + 1);
+    buttonClicked && 
+      setQuestion(question + 1)
+      setButtonClicked(false)
+    
   };
 
   const prevQuestion = () => {
     setQuestion(question - 1);
+    setButtonClicked(true)
   };
 
   const viewResults = () => {
@@ -72,9 +78,9 @@ const Quiz = () => {
   }, [answers])
 
   const getAnswers = (answer) => {
+    setButtonClicked(true)
     question <= 9 && setAnswers([...answers, answer])
-    question < 9 && nextQuestion()
-    question >= 9 && setShowResults(true)
+    
     
   };
 
@@ -150,31 +156,31 @@ const Quiz = () => {
           <>
           <Typography className={classes.titles}>{question + 1 + " - " + data[question]?.question}</Typography>
           <div className={classes.buttonsContainer}>
-            <button className={classes.answerButton} onClick={() => getAnswers("true")}>
+            <button className={classes.answerButton} onClick={() => getAnswers()}>
               {"a - " + data[question]?.answers.answer_a}
             </button>
-            <button className={classes.answerButton} onClick={() => getAnswers("true")}>
+            <button className={classes.answerButton} onClick={() => getAnswers()}>
               {"b - " + data[question]?.answers.answer_b}
             </button>
             {data[question]?.answers.answer_c && (
-              <button className={classes.answerButton} onClick={() => getAnswers("true")}>
+              <button className={classes.answerButton} onClick={() => getAnswers()}>
                 {"c - " + data[question]?.answers.answer_c}
               </button>
             )}
             {data[question]?.answers.answer_d && (
-              <button className={classes.answerButton} onClick={() => getAnswers("true")}>
+              <button className={classes.answerButton} onClick={() => getAnswers()}>
                 {data[question]?.answers.answer_d &&
                   "d - " + data[question]?.answers.answer_d}
               </button>
             )}
             {data[question]?.answers.answer_e && (
-              <button className={classes.answerButton} onClick={() => getAnswers("true")}>
+              <button className={classes.answerButton} onClick={() => getAnswers()}>
                 {data[question]?.answers.answer_e &&
                   "e - " + data[question]?.answers.answer_e}
               </button>
             )}
             {data[question]?.answers.answer_f && (
-              <button className={classes.answerButton} onClick={() => getAnswers("true")}>
+              <button className={classes.answerButton} onClick={() => getAnswers()}>
                 {data[question]?.answers.answer_f &&
                   "f - " + data[question]?.answers.answer_f}
               </button>

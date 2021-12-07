@@ -21,7 +21,7 @@ const Landing = () => {
   const classes = useStyles();
   return (
     <MainContainer>
-      <Grid container spacing={3}>
+      <Grid container spacing={3} style={{display: "flex", justifyContent: "center", alignItems: "center", textAlign: "center"}}>
         <Grid item xs={11} sm={12} md={12} lg={12} xl={12}>
           <Typography className={classes.landingLabel}>
             Insira seu nome para iniciar
