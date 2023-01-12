@@ -1,17 +1,37 @@
-# Getting Started with Create React App
+# 📝 Quiz App
 
-### `yarn install`
+> Multi-step form developed with the aim of acquiring and applying new skills with forms completely.
 
-instala todas as dependências necessárias para o projeto.
-
-### `yarn start`
-
-Executa o projeto:
-[http://localhost:3000](http://localhost:3000).
-
-### O projeto está hospedado pelo netlify em:
+### This project is hosted at:
 [https://affectionate-yonath-d95087.netlify.app](https://affectionate-yonath-d95087.netlify.app)
 
-### Possíveis melhorias para o projeto
+## 💻 Prerequisites
 
-- Acrescentar ranking de usuários
+Before start, check if you have the requirements to run this project:
+
+- `NodeJS` installed.
+
+## 🚀 Installing the projects
+
+To install this project, follow the steps below:
+
+In your terminal, inside the project folder, run the command below to install the dependencies:
+```
+yarn
+```
+
+## ☕ Running the project
+
+In your terminal, inside the project folder, run the command below to run the project:
+
+```
+yarn start
+```
+
+# This project is in development, this are some of the future features:
+
+- [ ] User ranking;
+
+
+
+
